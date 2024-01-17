@@ -1,5 +1,4 @@
-const sessionName = "yusril";
-const donet = "https://saweria.co/sansekai";
+const sessionName = "Ars";
 const {
   default: sansekaiConnect,
   useMultiFileAuthState,
@@ -129,7 +128,7 @@ async function startHisoka() {
   console.log(`using WA v${version.join(".")}, isLatest: ${isLatest}`);
   console.log(
     color(
-      figlet.textSync("Wa-OpenAI", {
+      figlet.textSync("AiMars OpenAI-Bot", {
         font: "Standard",
         horizontalLayout: "default",
         vertivalLayout: "default",
@@ -236,7 +235,7 @@ async function startHisoka() {
         console.log("Connection Replaced, Another New Session Opened, Please Restart Bot");
         process.exit();
       } else if (reason === DisconnectReason.loggedOut) {
-        console.log(`Device Logged Out, Please Delete Folder Session yusril and Scan Again.`);
+        console.log(`Device Logged Out, Please Delete Folder Session Ars and Scan Again.`);
         process.exit();
       } else if (reason === DisconnectReason.restartRequired) {
         console.log("Restart Required, Restarting...");
@@ -251,9 +250,9 @@ async function startHisoka() {
     } else if (connection === "open") {
       const botNumber = await client.decodeJid(client.user.id);
       console.log(color("Bot success conneted to server", "green"));
-      console.log(color("Donate for creator https://saweria.co/sansekai", "yellow"));
+      console.log(color("BELAJAR BOT BARENG ARS", "yellow"));
       console.log(color("Type /menu to see menu"));
-      client.sendMessage(botNumber, { text: `Bot started!\n\njangan lupa support ya bang :)\n${donet}` });
+      client.sendMessage(botNumber, { text: `Bot started!\n` });
     }
     // console.log('Connected...', update)
   });
