@@ -80,20 +80,20 @@ Tanyakan apa saja kepada AI.
 
 *(DALL-E)*
 Cmd: ${prefix}img
-Membuat gambar dari teks
-
-*(Source Code Bot)*
-Cmd: ${prefix}sc
-Menampilkan source code bot yang dipakai`)
+Membuat gambar dari teks`)
           break;
         case "ai": case "openai": case "chatgpt": case "ask":
           try {
             // tidak perlu diisi apikeynya disini, karena sudah diisi di file key.json
             if (setting.keyopenai === "ISI_APIKEY_OPENAI_DISINI") return reply("Apikey belum diisi\n\nSilahkan isi terlebih dahulu apikeynya di file key.json\n\nApikeynya bisa dibuat di website: https://beta.openai.com/account/api-keys");
             if (!text) return reply(`Chat dengan AI.\n\nContoh:\n${prefix}${command} Apa itu resesi`);
+            // const chatCompletion = await openai.chat.completions.create({
+            // const chatCompletion = await openai.chat.completions.create({
+            //   messages: [{ role: 'user', content: q }],
+            //   model: 'gpt-3.5-turbo-1106'
             const chatCompletion = await openai.chat.completions.create({
-              messages: [{ role: 'user', content: q }],
-              model: 'gpt-3.5-turbo'
+              messages: [{ role: "system", content: q }],
+              model: "gpt-3.5-turbo-1106",
             });
           
             await m.reply(chatCompletion.choices[0].message.content);
@@ -132,7 +132,7 @@ Menampilkan source code bot yang dipakai`)
         }
           break;
           case "sc": case "script": case "scbot":
-           m.reply("Bot ini menggunakan script dari https://github.com/Sansekai/Wa-OpenAI");
+           m.reply("D:/DATA ADHIIM/WA-OpenAI");
           break
         default: {
           if (isCmd2 && budy.toLowerCase() != undefined) {
